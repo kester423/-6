@@ -38,10 +38,10 @@ namespace ЛР_6
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.comboBoxBrand = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,45 +79,45 @@ namespace ЛР_6
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(65, 137);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
+            this.label1.Text = "Модель";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(65, 173);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "label2";
+            this.label2.Text = "Марка";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(65, 220);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "label3";
+            this.label3.Text = "Цена";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(65, 270);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(27, 13);
             this.label4.TabIndex = 6;
-            this.label4.Text = "label4";
+            this.label4.Text = "Л/С";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(65, 312);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.Size = new System.Drawing.Size(44, 13);
             this.label5.TabIndex = 7;
-            this.label5.Text = "label5";
+            this.label5.Text = "Пробег";
             // 
             // textBox1
             // 
@@ -126,14 +126,6 @@ namespace ЛР_6
             this.textBox1.Size = new System.Drawing.Size(144, 20);
             this.textBox1.TabIndex = 8;
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(200, 173);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(144, 20);
-            this.textBox2.TabIndex = 9;
-            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // textBox4
             // 
@@ -159,15 +151,23 @@ namespace ЛР_6
             this.textBox3.TabIndex = 10;
             this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
+            // comboBoxBrand
+            // 
+            this.comboBoxBrand.FormattingEnabled = true;
+            this.comboBoxBrand.Location = new System.Drawing.Point(200, 173);
+            this.comboBoxBrand.Name = "comboBoxBrand";
+            this.comboBoxBrand.Size = new System.Drawing.Size(144, 21);
+            this.comboBoxBrand.TabIndex = 13;
+            // 
             // FormAddUPDMD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBoxBrand);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -197,9 +197,9 @@ namespace ЛР_6
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.ComboBox comboBoxBrand;
     }
 }

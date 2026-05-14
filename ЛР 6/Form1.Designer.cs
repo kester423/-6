@@ -31,9 +31,6 @@ namespace ЛР_6
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Aorm = new System.Windows.Forms.PictureBox();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonDelete = new System.Windows.Forms.Button();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.brandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,9 +38,12 @@ namespace ЛР_6
             this.horsepowerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mileageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableMotorbikeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Aorm = new System.Windows.Forms.PictureBox();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Aorm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableMotorbikeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Aorm)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -63,35 +63,7 @@ namespace ЛР_6
             this.dataGridView1.Size = new System.Drawing.Size(517, 372);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Aorm
-            // 
-            this.Aorm.Location = new System.Drawing.Point(589, 48);
-            this.Aorm.Name = "Aorm";
-            this.Aorm.Size = new System.Drawing.Size(178, 104);
-            this.Aorm.TabIndex = 1;
-            this.Aorm.TabStop = false;
-            this.Aorm.LoadCompleted += new System.ComponentModel.AsyncCompletedEventHandler(this.Aorm_LoadCompleted);
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Location = new System.Drawing.Point(604, 186);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
-            this.buttonAdd.TabIndex = 2;
-            this.buttonAdd.Text = "Добавить";
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // buttonDelete
-            // 
-            this.buttonDelete.Location = new System.Drawing.Point(604, 360);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
-            this.buttonDelete.TabIndex = 0;
-            this.buttonDelete.Text = "Удалить";
-            this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Click += new System.EventHandler(this.button2_Click);
+            this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -133,6 +105,35 @@ namespace ЛР_6
             // 
             this.tableMotorbikeBindingSource.DataSource = typeof(ЛР_6.ModelEF.Table_Motorbike);
             // 
+            // Aorm
+            // 
+            this.Aorm.Location = new System.Drawing.Point(589, 48);
+            this.Aorm.Name = "Aorm";
+            this.Aorm.Size = new System.Drawing.Size(178, 104);
+            this.Aorm.TabIndex = 1;
+            this.Aorm.TabStop = false;
+            this.Aorm.LoadCompleted += new System.ComponentModel.AsyncCompletedEventHandler(this.Aorm_LoadCompleted);
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Location = new System.Drawing.Point(604, 186);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdd.TabIndex = 2;
+            this.buttonAdd.Text = "Добавить";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(604, 360);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
+            this.buttonDelete.TabIndex = 0;
+            this.buttonDelete.Text = "Удалить";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.button2_Click);
+            // 
             // FormShowMot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -146,8 +147,8 @@ namespace ЛР_6
             this.Text = "Мотоциклы";
             this.Load += new System.EventHandler(this.FormShowMot_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Aorm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableMotorbikeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Aorm)).EndInit();
             this.ResumeLayout(false);
 
         }

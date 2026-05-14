@@ -18,6 +18,7 @@ namespace ЛР_6
         {
             InitializeComponent();
         }
+        public static Model1 DB = new Model1();
 
         private void Aorm_LoadCompleted(object sender, AsyncCompletedEventArgs e)
         {
@@ -33,7 +34,35 @@ namespace ЛР_6
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            if(DB.Table_Motorbike.ToList().Count==0)
+            {
+                MessageBox.Show("Данные отсутствуют!");
+                return;
+            }
+            Table_Motorbike CurrentMoto = DB.Table_Motorbike.Find((int)dataGridView1.CurrentRow.Cells[0].Value);
+            DialogResult result = MessageBox.Show(
+                $@"Вы действительно хотите удалить объект с ID - {CurrentMoto.ID}",
+                "Сообщение",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+            if(result==DialogResult.Yes)
+            {
+                try
+                {
+                    DB.Table_Motorbike.Remove(CurrentMoto);
+                    DB.SaveChanges();
+                    File.Delete($@"Pictures\{CurrentMoto.Picture}");
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    tableMotorbikeBindingSource.DataSource = DB.Table_Motorbike.ToList();
+                    Aorm.Image = null;
+                }
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -43,7 +72,17 @@ namespace ЛР_6
 
         private void FormShowMot_Load(object sender, EventArgs e)
         {
+            tableMotorbikeBindingSource.DataSource = DB.Table_Motorbike.ToList();
+            if (DB.Table_Motorbike.ToList().Count == 0) return;
+            int ID = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            Aorm.Image = Image.FromFile($@"Pictures\{DB.Table_Motorbike.Find(ID).Picture}");
+        }
 
+        private void dataGridView1_Click(object sender, EventArgs e)
+        {
+            if (DB.Table_Motorbike.ToList().Count == 0) return;
+            int ID = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            Aorm.Image = Image.FromFile($@"Pictures\{DB.Table_Motorbike.Find(ID).Picture}");
         }
     }
 }
